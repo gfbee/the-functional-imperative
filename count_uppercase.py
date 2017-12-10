@@ -23,7 +23,7 @@ def count_uppercase_1(s):
 # Creating a whole new list, and then taking its length, sounds slow.
 
 # But "slow" is MEANINGLESS.
-# To have meaning it MUST include:
+# To have meaning, it MUST include:
 #   under what conditions, and
 #   what is an acceptable amount of time
 
@@ -32,10 +32,9 @@ def count_uppercase_1(s):
 #   Your python compiler/interpreter?
 #   Your machine architecture?
 
-# When someone suggests something's slow, or could be slow and should be avoided:
-#  most of the time you should ignore them,  unless they have profiling data.
+# Why speculate: you have the conditions, so what you care about is literally
+#  the amout of time under those conditions. So time it!
 
-# Let's profile!
 L = ["A" for _ in range(10000000)]
 print(count_uppercase(L))
 print(count_uppercase_1(L))
@@ -49,5 +48,7 @@ print(count_uppercase_1(L))
 #         1    1.290    1.290    1.905    1.905 count_uppercase.py:19(count_uppercase_1)
 
 # Surprised?
-# Next time someone throws around speculative claims about efficiency, be suspicious!
-# Challenge them for data!
+
+# The situation is improving, but speculative claims about efficiency, often presented
+#  authoritatively, are much too common. Next time someone says "it's slow", be suspicious,
+#  and ask whether they have actually tried it!
